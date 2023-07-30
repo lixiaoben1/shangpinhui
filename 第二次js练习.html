@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        let money = 100
+        // while (grade1 < 11) {
+        //     document.write(`我很牛${grade1}`)
+        //     grade1++
+        // }
+
+        // while (grade1 <= 100) {
+        //     if (grade1 % 2 !== 0) { sum = sum + grade1 }
+        //     grade1++
+        // }
+        // document.write(`我很牛${sum}`)
+        // while (grade1 !== '爱') {
+
+        //     // let grade1 = prompt('你爱他吗')
+        //     if (grade1 === '爱') {
+        //         break
+        //     } else { let grade1 = prompt('请重新选择') }
+        // }
+
+
+
+        while (true) {
+            let inpu = +prompt(`请输入要执行的编号
+    1、存钱
+    2、取钱
+    3、余额查询
+    4、退出`)
+            if (inpu === 4) { break }
+            switch (inpu) {
+                case 1: cun = +prompt('输入存款金额')
+                    money = cun + money
+                    break
+                case 2: qu = prompt('输入存款金额')
+                    money = money - qu
+                    break
+                case 3:
+                    alert(`您的余额是${money}元`)
+                    break
+                default: alert('请重新输入有效编号')
+            }
+
+        } alert('感谢您使用本系统')
+
+    </script>
+</body>
+
+</html>
