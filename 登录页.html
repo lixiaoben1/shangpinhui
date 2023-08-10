@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no,maximum-scale=1.0,minimum-scale=1.0" />
+    <title>第一次练习动画</title>
+    <link rel="stylesheet" href="./reset.css" />
+    <link rel="stylesheet" href="./iconfont1/iconfont1.css" />
+    <style>
+      body {
+        width: 100%;
+        height: 900px;
+        min-width: 320px;
+        max-width: 640px;
+        background-image: url('./picture/hero-bg.png');
+        background-size: cover;
+        position: relative;
+        /*background-position-x: -4100px;*/
+        animation: background 200s infinite linear;
+      }
+      @keyframes background {
+        from {
+          background-position-x: 0;
+        }
+        to {
+          background-position-x: -5760px;
+        }
+      }
+
+      /* .container {
+            width: 800px;
+            height: 800px;
+            margin: 0 auto;
+            background-color: rgb(167, 42, 42);
+        } */
+      .glass {
+        width: 300px;
+        height: 400px;
+        background-color: rgba(255, 255, 255, 0.05);
+        /* background-color: red; */
+        border-radius: 20px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        backdrop-filter: blur(4px);
+        box-shadow:
+          inset 1px 1px 6px rgba(255, 255, 255, 0.3),
+          2px 2px 15px rgba(0, 0, 0, 0.5);
+      }
+
+      input {
+        background: transparent;
+        outline: none;
+        border-bottom: 1px solid #666;
+        width: 80%;
+        height: 40px;
+        color: #000000;
+        font-size: 18px;
+        margin-left: 30px;
+        margin-top: 50px;
+      }
+
+      .text {
+        font-size: 25px;
+        margin-left: 30px;
+        margin-top: 50px;
+        color: #ffffff;
+        font-weight: bold;
+        text-shadow: #d3ebff 0 0 10px;
+      }
+      input:focus {
+        border-radius: 10px;
+        background: #d7edf8;
+        opacity: 0.5;
+        box-shadow:
+          inset -1px -1px 5px #8a8a8a,
+          1px 1px 4px #afafaf,
+          inset 1px 1px 2px white;
+        transform: translateZ(-1px);
+        padding-left: 10px;
+        transition: all 0.5s;
+      }
+
+      button {
+        border: none;
+        width: 50px;
+        height: 50px;
+        margin-left: 50%;
+        margin-top: 50px;
+        transform: translate(-50%);
+        background-color: rgba(218, 218, 218, 0.192);
+        border-radius: 50%;
+        box-shadow: 0 2px 5px #111;
+        cursor: pointer;
+      }
+
+      @keyframes first1 {
+        from {
+          transform: translateY(0);
+        }
+
+        to {
+          transform: translateY(-30px);
+        }
+      }
+
+      span {
+        background-color: #fff;
+        position: absolute;
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+      }
+
+      span:nth-child(1) {
+        top: 450px;
+        left: 275px;
+        background-image: linear-gradient(142deg, #49bcf6, #49deb2);
+        animation: first1 3s infinite ease-in-out alternate;
+      }
+
+      span:nth-child(2) {
+        top: 110px;
+        left: 320px;
+        width: 40px;
+        height: 40px;
+        background-image: linear-gradient(#0a45a8, #09a4db);
+        animation: first1 5s infinite ease-in-out alternate-reverse;
+      }
+
+      span:nth-child(3) {
+        top: 430px;
+        left: 5px;
+        width: 80px;
+        height: 80px;
+        background-image: linear-gradient(#1c0125, #db6be2);
+        animation: first1 4s infinite ease-in-out alternate;
+      }
+
+      span:nth-child(4) {
+        top: 5px;
+        left: 5px;
+        width: 80px;
+        height: 80px;
+        background-image: linear-gradient(#ff7d58, #ffcc4b);
+        animation: first1 6s infinite ease-in-out alternate-reverse;
+      }
+
+      @keyframes first2 {
+        from {
+          transform: translate(-50%, -50%) scale(0) rotatez(60deg);
+        }
+
+        to {
+          transform: translate(-50%, -50%) scale(1) rotatez(0);
+          visibility: visible;
+        }
+      }
+
+      .bg {
+        width: 380px;
+        height: 600px;
+        /* margin-top: 100px; */
+        /* background-color: wheat; */
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        animation: first2 1s ease-out 1s forwards;
+        visibility: hidden;
+      }
+      .iconfont {
+        font-size: 25px;
+      }
+      .caution {
+        margin-left: 10%;
+        font-size: 15px;
+        float: left;
+      }
+      .shake {
+        animation: shake 800ms ease-in-out;
+      }
+      @keyframes shake {
+        10%,
+        90% {
+          transform: translate3d(-1px, 0, 0);
+        }
+        20%,
+        80% {
+          transform: translate3d(+2px, 0, 0);
+        }
+        30%,
+        70% {
+          transform: translate3d(-4px, 0, 0);
+        }
+        40%,
+        60% {
+          transform: translate3d(+4px, 0, 0);
+        }
+        50% {
+          transform: translate3d(-4px, 0, 0);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="bg">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="glass">
+        <div class="text">login</div>
+        <input type="text" class="login-name" name="user" placeholder="User" autocomplete="off" />
+        <div class="caution caution1"></div>
+        <input type="password" class="login-password" name="password" placeholder="Password" autocomplete="off" />
+        <div class="caution caution2"></div>
+        <button class="button" name="login">
+          <div class="iconfont icon-right"></div>
+        </button>
+      </div>
+    </div>
+    <script>
+      const loginUser = document.querySelector('[name=user]')
+      const caution1 = document.querySelector('.caution1')
+      const caution2 = document.querySelector('.caution2')
+      const button = document.querySelector('.button')
+      const loginPassword = document.querySelector('.login-password')
+      loginUser.addEventListener('change', verifyUser)
+      function verifyUser() {
+        const reg = /^[a-zA-Z0-9-_]{6,12}$/
+        if (!reg.test(loginUser.value)) {
+          loginUser.style.boxShadow = '0 0 2px red'
+          caution1.innerHTML = '请输入正确的用户名'
+          loginPassword.style.marginTop = '27.5px'
+          return false
+        } else {
+          loginUser.style.boxShadow = ''
+          caution1.innerHTML = ''
+          loginPassword.style.marginTop = '50px'
+          return true
+        }
+      }
+      // 密码判断
+      loginPassword.addEventListener('change', verifyPassword)
+      function verifyPassword() {
+        const reg = /^[a-zA-Z0-9-_]{6,12}$/
+        if (!reg.test(loginPassword.value)) {
+          loginPassword.style.boxShadow = '0 0 2px red'
+          caution2.innerHTML = '请输入正确的密码'
+          button.style.marginTop = '27.5px'
+          return false
+        } else {
+          loginPassword.style.boxShadow = ''
+          caution2.innerHTML = ''
+          button.style.marginTop = '50px'
+          return true
+        }
+      }
+
+      // 按钮登陆
+      const btn = document.querySelector('[name=login]')
+      btn.addEventListener('click', function () {
+        if (!verifyUser()) {
+          loginUser.classList.add('shake')
+          setTimeout(() => {
+            loginUser.classList.remove('shake')
+          }, 800)
+        }
+        if (!verifyPassword()) {
+          loginPassword.classList.add('shake')
+          setTimeout(() => {
+            loginPassword.classList.remove('shake')
+          }, 800)
+          return
+        }
+        window.location.href = './主页导航.html'
+      })
+    </script>
+  </body>
+</html>
